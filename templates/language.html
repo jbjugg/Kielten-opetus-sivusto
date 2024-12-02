@@ -1,0 +1,13 @@
+<b>Tervetuloa kieleen {{ language }} </b>
+Tästä voit luoda uuden tehtävän: <a href="/new"> Luo tehtävä </a>
+Tehtäviä: {{ counter }}
+<hr>
+{% for exercise in exercises %}
+<b>Aihe:</b> {{ exercise.topic }} 
+<b>Palautus:</b> {{ exercise.deadline }} 
+<a href="/exercise/{{exercise.id}}">Valitse tehtävä</a><br>
+<a href="/result/{{exercise.id}}">Näytä vastaukset</a>
+<hr>
+{% endfor %}
+
+ 

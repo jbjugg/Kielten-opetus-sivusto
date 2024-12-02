@@ -1,0 +1,9 @@
+<b>Tehtävä: </b>{{ exercises.topic }}<br>
+ {{exercises.exercise}}
+<form  action="/answer" method="POST">
+    <p>Vastaus:<br>
+    <textarea name="answer" rows="30" cols="200"></textarea></p> 
+    <input type="submit" value="Lähetä vastaus">
+    <input type="hidden" name="id" value="{{ exercises.id }}">
+</form>
+

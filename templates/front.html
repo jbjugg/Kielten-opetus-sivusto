@@ -1,0 +1,19 @@
+<title>Kielten opetussivusto</title>
+<h1>Kielten opetussivusto</h1>
+Tervetuloa! Täällä voit oppia ja opettaa eri kieliä. Valitse alhaalta haluamasi kieli ja aloita oppiminen tai opettaminen!
+{% if session.user_id %}
+Olet kirjautunut sisään.
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+{% endif %}
+<br>
+<a href="/add">Lisää kieli</a>
+<hr>
+{% for language in languages %}
+Kieli:<a href="/language/{{language.id}}"> {{language.language}}</a><br>  
+Tehtäviä: {{ language.exercise_count }}
+<hr>
+{% endfor %}
+
+

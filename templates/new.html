@@ -1,0 +1,17 @@
+<form action="/create" method="POST">
+    <b>Valitse kieli:</b> <br>
+    {% for language in languages %}
+    <input type="radio" name="language_id" value="{{language.id}}"> {{language.language}} <br>
+    {% endfor %}
+    <hr>
+    <p>Tehtävän nimi:<br>
+    <input type="text" name="topic"></p>
+    <p>Tehtävänanto:<br>
+    <textarea  name="exercise" rows="10" cols="100"></textarea></p>
+    <p>Palautus viimeistään:<br>
+    <input type="text" name="deadline"></p>
+    <input type="hidden" name="user_id" value="{{languages.user_id}}">
+    <input type="submit" value="Luo tehtävä">
+    
+    </form>
+    

@@ -1,0 +1,8 @@
+<b>Tervetuloa oppimaan uusia kieliä</b>
+Alhaalta löydät eri opettajien kansioita, joista voit valita minkä vaan! 
+<hr>
+{% for file in files %}
+Aihe: {{ file.nimi }}
+<a href="/kansio/{{ file.id }}">Mene kansioon</a> |
+<hr>
+{% endfor %}
